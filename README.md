@@ -34,7 +34,7 @@ This is a comprehensive Spring Boot application demonstrating modern REST API de
 
 ### **1. Clone the repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/spring-boot-api-demo.git
+git clone https://github.com/Tiencut/spring-boot-api-demo.git
 cd spring-boot-api-demo
 ```
 
