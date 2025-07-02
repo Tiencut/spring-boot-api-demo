@@ -1,0 +1,46 @@
+{
+    "name": "Spring Boot Java 21",
+    "image": "mcr.microsoft.com/devcontainers/java:21",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "21",
+            "installMaven": true
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "18"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "vscjava.vscode-spring-boot",
+                "Pivotal.vscode-spring-boot",
+                "redhat.java",
+                "vscjava.vscode-maven",
+                "ms-vscode.vscode-json",
+                "ms-vscode.rest-client"
+            ],
+            "settings": {
+                "java.configuration.runtimes": [
+                    {
+                        "name": "JavaSE-21",
+                        "path": "/usr/local/sdkman/candidates/java/current"
+                    }
+                ],
+                "java.compile.nullAnalysis.mode": "automatic",
+                "spring-boot.ls.checkVersion": false,
+                "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml"
+            }
+        }
+    },
+    "forwardPorts": [8080, 3000],
+    "postCreateCommand": "mvn clean install -DskipTests",
+    "portsAttributes": {
+        "8080": {
+            "label": "Spring Boot App",
+            "onAutoForward": "notify"
+        }
+    },
+    "remoteUser": "vscode"
+}
